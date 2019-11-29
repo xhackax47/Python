@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Liste de Recettes</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+<h1 class="pageTitle">Liste de Recettes</h1>
+<ul class="listRecipes">
+    {% for object in object_list %}
+        <a href="{% url "recipes_detail" object.pk %}"><h2>Recette : {{ object.title }}</h2></a>
+    {% endfor %}
+</ul>
+
+<a href="{% url "index" %}">Retour à l'index</a>
+
+</body>
+</html>

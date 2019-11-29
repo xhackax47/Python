@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Liste de Recettes</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+<h1 class="pageTitle">Détail Recette</h1>
+
+<h2>Recette : {{ object.title }}</h2>
+<p> {{ object.detail }}</p>
+<ul>
+{% for r_i_u in object.ingredients.all %}
+    <li>{{ r_i_u.id }}°/ {{ r_i_u.quantity }} {{ r_i_u.unit }} de {{ r_i_u.ingredient }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url "recipes_list" %}">Retour à la liste de recettes</a>
+<br />
+<a href="{% url "index" %}">Retour à l'index</a>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% load static %}
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Index Python/Django</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="{% static '' %}"></script>
+</head>
+<body>
+<h1 class="pageTitle">Index Python/Django</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aut consectetur, earum facilis hic, modi molestiae
+    quas quasi ratione similique vero, voluptates voluptatibus. A minus quasi quia sunt velit.</p>
+<h2>Bonjour et bienvenue {{ name }}&nbsp;!!!</h2>
+<ul>
+    {% for recipe in recipes %}
+        <li>{{ recipe.title }}</li>
+    {% endfor %}
+</ul>
+<br/>
+<a href="recipes_list">Cliquez ici pour avoir la liste de recettes</a>
+</body>
+</html>
